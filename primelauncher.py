@@ -14,6 +14,7 @@ time.sleep(5)
 subprocess.Popen('prime95.exe -T')
 starttime = time.time()
 refresh_delay = 0
+print("starting..")
 time.sleep(5)
 no_errors = 1
 completed_tests = []
@@ -38,7 +39,14 @@ while no_errors:
                         completed_tests.append(fft)
                         completed_tests.sort()
                     fft_list.append(fft)
+        now = time.time()
+        minutes = int((now-starttime)/60)
+        seconds = int(now-starttime-(minutes*60))
         os.system("cls")
+
+
+
+        print(f"Prime95 Launcher {minutes} Min {seconds} Sec")
         for x in completed_tests:
             print(f"{x}k {fft_list.count(x)}")
 
@@ -54,5 +62,8 @@ while no_errors:
         time.sleep(refresh_delay)
 
 
-print(f"Error found, Prime95 has been terminated after {int(time.time()-starttime)}")
+now = time.time()
+minutes = int((now-starttime)/60)
+seconds = int(now-starttime-(minutes*60))
+print(f"Error found. Prime95 has been terminated after {minutes} Minutes {seconds} Seconds")
 a = input()
