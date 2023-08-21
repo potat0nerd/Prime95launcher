@@ -1,0 +1,2 @@
+python primelauncher.py
+pause
