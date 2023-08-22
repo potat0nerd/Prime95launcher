@@ -42,13 +42,14 @@ while no_errors:
         now = time.time()
         minutes = int((now-starttime)/60)
         seconds = int(now-starttime-(minutes*60))
-        os.system("cls")
 
 
 
-        print(f"Prime95 Launcher {minutes} Min {seconds} Sec")
-        for x in completed_tests:
-            print(f"{x}k {fft_list.count(x)}")
+        if no_errors:
+            os.system("cls")
+            print(f"Prime95 Launcher {minutes} Min {seconds} Sec")
+            for x in completed_tests:
+                print(f"{x}k {fft_list.count(x)}")
 
 
 
